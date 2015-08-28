@@ -34,8 +34,8 @@ import java.util.List;
  */
 public abstract class Game implements Listener {
 
-  GameState currentState = null; //State of the Game
-  Iterator stateIterator;
+  private GameState currentState = null; //State of the Game
+  private Iterator stateIterator;
   private NULogger logger;
   private String rawName;
   private String name;

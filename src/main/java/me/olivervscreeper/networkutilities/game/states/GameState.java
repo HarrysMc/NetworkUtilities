@@ -12,9 +12,9 @@ import org.bukkit.event.Listener;
  *
  * @author OliverVsCreeper
  */
-public abstract class GameState implements Listener {
+public abstract class GameState<T extends Game> implements Listener {
 
-  public Game gameInstance;
+  public T gameInstance;
   private String name;
   private String displayName;
 
@@ -25,7 +25,7 @@ public abstract class GameState implements Listener {
    * @param name Raw name of the state for display in log files
    * @param displayName Formatted display name for use in chat messages
    */
-  public GameState(Game game, String name, String displayName) {
+  public GameState(T game, String name, String displayName) {
     this.gameInstance = game;
     this.name = name;
     this.displayName = displayName;
