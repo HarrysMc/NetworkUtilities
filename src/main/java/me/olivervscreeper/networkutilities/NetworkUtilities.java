@@ -11,10 +11,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mcstats.Metrics;
 
 import javax.tools.ToolProvider;
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -48,20 +46,9 @@ public class NetworkUtilities extends JavaPlugin {
     logger.log("NU", "Default commands loaded into Bukkit");
     Bukkit.getPluginManager().registerEvents(new CommunicationUtils(), this);
     logger.log("NU", "Registered events into Bukkit");
-    mcStats();
-    logger.log("NU", "Enabled MCStats connection");
 
     logger.log("NU", "Plugin initialisation complete.");
 
-  }
-
-  private void mcStats() {
-    try {
-      Metrics metrics = new Metrics(this);
-      metrics.start();
-    } catch (IOException e) {
-      logger.log("NU", "Failed to enable MCStats connection");
-    }
   }
 
   /**
