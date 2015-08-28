@@ -5,7 +5,6 @@ import me.olivervscreeper.networkutilities.command.CommandManager;
 import me.olivervscreeper.networkutilities.messages.Message;
 import me.olivervscreeper.networkutilities.messages.MessageDisplay;
 
-import me.olivervscreeper.networkutilities.utils.CommunicationUtils;
 import me.olivervscreeper.networkutilities.utils.compiler.CompilerUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -44,8 +43,6 @@ public class NetworkUtilities extends JavaPlugin {
     logger.log("NU", "New command manager created");
     manager.registerCommands(this);
     logger.log("NU", "Default commands loaded into Bukkit");
-    Bukkit.getPluginManager().registerEvents(new CommunicationUtils(), this);
-    logger.log("NU", "Registered events into Bukkit");
 
     logger.log("NU", "Plugin initialisation complete.");
 
